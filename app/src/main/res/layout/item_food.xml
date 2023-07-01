@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:elevation="2dp"
+    android:background="@drawable/bg_circle_white"
+    android:paddingBottom="10dp"
+    android:layout_height="wrap_content">
+    <!---->
+    <ImageView
+        android:id="@+id/img_food"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <!-- Title -->
+    <TextView
+        android:id="@+id/txt_title"
+        android:textColor="@color/darkSlategray"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/abel"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
+        android:maxLines="1"/>
+
+    <!-- Category -->
+    <TextView
+        android:id="@+id/txt_category"
+        android:textColor="@color/deepKoamaru"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:drawablePadding="5dp"
+        app:drawableStartCompat="@drawable/ic_fast_food"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/abel"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
+        app:drawableTint="@color/tartOrange" />
+
+    <!-- Area -->
+    <TextView
+        android:id="@+id/txt_area"
+        android:textColor="@color/deepKoamaru"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/txt_category"
+        app:layout_constraintTop_toTopOf="@id/txt_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:drawablePadding="5dp"
+        app:drawableStartCompat="@drawable/ic_language"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/abel"
+        android:layout_marginHorizontal="15dp"
+        app:drawableTint="@color/tartOrange" />
+
+    <!-- Source -->
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/img_source"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_chrome_reader_mode"
+        app:tint="@color/tartOrange" />
+</androidx.constraintlayout.widget.ConstraintLayout>

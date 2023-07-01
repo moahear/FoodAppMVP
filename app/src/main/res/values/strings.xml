@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Food App MVP</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search here …</string>
+    <string name="foods">Foods</string>
 </resources>
