@@ -14,7 +14,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -42,7 +41,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideClient(connectionTimeout:Long,@Body bodyInterceptor: HttpLoggingInterceptor):OkHttpClient=
+    fun provideClient(connectionTimeout:Long,@BodyHttpLoggingInterceptor bodyInterceptor: HttpLoggingInterceptor):OkHttpClient=
         OkHttpClient.Builder()
             .readTimeout(connectionTimeout,TimeUnit.SECONDS)
             .writeTimeout(connectionTimeout,TimeUnit.SECONDS)
@@ -57,6 +56,7 @@ object NetworkModule {
     fun provideRetrofit(baseUrl:String,client: OkHttpClient,gson: Gson): ApiServices =
         Retrofit.Builder()
             .baseUrl(baseUrl)
+            .client(client)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .build().create(ApiServices::class.java)
